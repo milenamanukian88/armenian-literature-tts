@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Armenian Literature Text-to-Speech Tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="reader">
+      <aside class="sidebar" aria-label="Reading selection">
+        <div class="brand">
+          <p class="kicker">English TTS</p>
+          <h1>Armenian Literature</h1>
+        </div>
+
+        <label class="field-label" for="readingSelect">Reading</label>
+        <select id="readingSelect"></select>
+
+        <div id="readingList" class="reading-list"></div>
+      </aside>
+
+      <section class="content-panel" aria-live="polite">
+        <header class="story-header">
+          <p id="storyAuthor"></p>
+          <h2 id="storyTitle"></h2>
+        </header>
+
+        <section class="controls" aria-label="Text to speech controls">
+          <button id="playPauseButton" class="primary-button" type="button">Play</button>
+          <button id="replayButton" class="secondary-button" type="button">Replay</button>
+
+          <label>
+            <span>Language</span>
+            <select id="languageSelect">
+              <option value="en-US">English</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Speed</span>
+            <input id="speedControl" type="range" min="0.6" max="1.4" step="0.1" value="1">
+            <output id="speedOutput">1.0x</output>
+          </label>
+
+          <label>
+            <span>Voice</span>
+            <select id="voiceSelect"></select>
+          </label>
+
+          <label>
+            <span>Text Size</span>
+            <input id="textSizeControl" type="range" min="16" max="26" step="1" value="19">
+            <output id="textSizeOutput">19px</output>
+          </label>
+        </section>
+
+        <article id="storyText" class="story-text" tabindex="0"></article>
+      </section>
+    </section>
+  </main>
+
+  <script src="readings.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
